@@ -16,6 +16,7 @@ template <typename T> T MessageQueue<T>::receive() {
   // remove last vector element from the queue
   T msg = std::move(_queue.back());
   _queue.pop_back();
+  _queue.clear(); // flush out the message queue during every call to avoid passing across red light
 
   return msg;
 }
@@ -26,7 +27,7 @@ template <typename T> void MessageQueue<T>::send(T &&msg) {
   // message to the queue and afterwards send a notification.
   std::lock_guard<std::mutex> uLock(_mutex);
 
-  _queue.push_back(std::move(msg));
+  _queue.emplace_back(msg);
   _cond.notify_one(); // notify client after pushing new Vehicle into vector
 }
 
