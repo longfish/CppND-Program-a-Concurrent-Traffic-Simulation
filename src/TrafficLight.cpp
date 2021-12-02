@@ -32,7 +32,10 @@ template <typename T> void MessageQueue<T>::send(T &&msg) {
 
 /* Implementation of class "TrafficLight" */
 
-TrafficLight::TrafficLight() { _currentPhase = TrafficLightPhase::red; }
+TrafficLight::TrafficLight() {
+  _msgQueue = std::make_shared<MessageQueue<TrafficLightPhase>>();
+  _currentPhase = TrafficLightPhase::red;
+}
 
 void TrafficLight::waitForGreen() {
   // FP.5b : add the implementation of the method waitForGreen, in which an
@@ -40,7 +43,7 @@ void TrafficLight::waitForGreen() {
   // message queue. Once it receives TrafficLightPhase::green, the method
   // returns.
   while (true) {
-    auto msg = _msgQueue->receive();
+    TrafficLightPhase msg = _msgQueue->receive();
     if (msg == TrafficLightPhase::green)
       break;
   }
@@ -85,8 +88,12 @@ void TrafficLight::cycleThroughPhases() {
     if (timeSinceLastUpdate >= cycleDuration) {
       // toggle the current phase of the traffic light between red and green and
       // send this message
-      _currentPhase = TrafficLightPhase::green;
-      //_msgQueue->send(std::move(_currentPhase));
+      if (_currentPhase == TrafficLightPhase::green)
+        _currentPhase = TrafficLightPhase::red;
+      else
+        _currentPhase = TrafficLightPhase::green;
+
+      _msgQueue->send(std::move(_currentPhase));
 
       // reset stop watch for next cycle
       lastUpdate = std::chrono::system_clock::now();

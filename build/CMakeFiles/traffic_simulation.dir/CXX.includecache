@@ -6,41 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Intersection.cpp
-chrono
--
-future
--
+/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficLight.cpp
+TrafficLight.h
+/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficLight.h
 iostream
 -
 random
 -
-thread
--
-Intersection.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Intersection.h
-Street.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Street.h
-Vehicle.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Vehicle.h
-
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Intersection.h
-TrafficLight.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficLight.h
-TrafficObject.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficObject.h
-future
--
-memory
--
-mutex
--
-vector
--
-
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Street.h
-TrafficObject.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficObject.h
 
 /mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficLight.h
 TrafficObject.h
@@ -59,8 +31,4 @@ thread
 -
 vector
 -
-
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/Vehicle.h
-TrafficObject.h
-/mnt/d/Code/CCplusplus/Udacity_cpp/4_concurrency/CppND-Program-a-Concurrent-Traffic-Simulation/src/TrafficObject.h
 
